@@ -1,0 +1,256 @@
+@use '../core/' as *;
+
+// Start Navigation Menu
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    height: 100px;
+    position: relative;
+}
+.menu__item {
+    &.logo {
+        img {
+            display: block;
+        }
+    }
+    a {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        &:hover {
+            color: $neutral-black;
+            border-color: $neutral-black;
+        }
+    }
+}
+.menu__sign-in-up {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+#menu-icon {
+    width: 26px;
+    display: none;
+}
+// End Navigation Menu
+
+// Start Intro Section
+.intro {
+    display: flex;
+    gap: 100px;
+    max-width: 1190px;
+    margin: 3em auto;
+}
+.intro__image {
+    flex: 1;
+    img {
+        display: block;
+        max-width: 100%;
+    }
+    .hero-desktop {
+        display: block;
+    }
+    .hero-mobile {
+        display: none;
+    }
+}
+.intro-content {
+    align-self: flex-end;
+    flex: 1;
+    order: -1;
+}
+.intro-content__title {
+    font-size: 3em;
+    width: 11ch;
+    line-height: 1;
+    margin-bottom: 3rem;
+}
+.intro-content__description {
+    color: gray;
+    line-height: 1.6;
+    max-width: 480px;
+    margin-bottom: 3em;
+}
+.intro-content__learn-more-link {
+    display: block;
+    width: fit-content;
+    margin-bottom: 6em;
+    background-color: $neutral-black;
+    color: $neutral-white;
+    font-weight: 700;
+}
+.intro-content__clients {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+// End Intro Section
+
+// Dropdown
+.features-dropdown,
+.company-dropdown {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background-color: #fafafa;
+    box-shadow: 1px 1px 30px rgb(0 0 0 / 21%);
+    padding: 20px;
+    border-radius: 16px;
+}
+.features-dropdown__item {
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    margin-bottom: 1em;
+    a {
+        font-weight: 500;
+        gap: 15px;
+    }
+    img {
+        width: 13px;
+        height: 17px;
+    }
+}
+.company-dropdown {
+    width: 90px;
+    left: 0;
+}
+.company-dropdown__item {
+    margin-bottom: 1em;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    a {
+        font-weight: 500;
+        gap: 15px;
+    }
+}
+// Side Menu
+.side-menu {
+    display: none;
+}
+
+@media (max-width: 950px) {
+    .side-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+    }
+    .menu {
+        &:not(.active) {
+            transform: translateX(100%);
+        }
+        &.active {
+            li {
+                margin-bottom: 1em;
+            }
+        }
+        display: unset;
+        position: fixed;
+        width: 55%;
+        height: 100vh;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        padding: 15px;
+        transition: transform 300ms;
+        background-color: $neutral-white;
+        li {
+            margin-bottom: 2em;
+        }
+        li:last-of-type {
+            width: 200px;
+            margin-left: 0;
+        }
+    }
+    .company-dropdown {
+        padding: {
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 20px;
+        }
+    }
+    .features-dropdown,
+    .company-dropdown {
+        position: relative;
+        padding: {
+            top: 0;
+            bottom: 0;
+        }
+        box-shadow: none;
+        top: auto;
+    }
+    .menu__item__dropdown-link {
+        margin-bottom: 1em;
+    }
+    #close-menu {
+        justify-content: flex-end;
+    }
+    .menu__sign-in-up {
+        display: unset;
+        li:first-of-type {
+            a {
+                justify-content: center;
+            }
+        }
+        li:last-of-type {
+            a {
+                justify-content: center;
+            }
+        }
+    }
+    .intro {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        max-width: none;
+    }
+    .intro__image {
+        order: -1;
+        .hero-desktop {
+            display: none;
+        }
+        .hero-mobile {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .intro-content {
+        align-self: auto;
+        text-align: center;
+    }
+    .intro-content__title {
+        width: auto;
+        font-size: 2em;
+    }
+    .intro-content__description {
+        font-size: 0.96em;
+    }
+    .intro-content__learn-more-link {
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+    .intro-content__clients {
+        img {
+            width: 70px;
+        }
+    }
+    #menu-icon {
+        display: block;
+    }
+}
+
+// Overlay
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparentize($neutral-black, 0.5);
+}

@@ -1,0 +1,22 @@
+@use '../core/variables' as *;
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    min-height: 100vh;
+    padding: 0 30px;
+    background-color: $neutral-white;
+}
+@media (max-width: 950px) {
+    body {
+        padding: 0 15px;
+    }
+}
+
+a {
+    text-decoration: none;
+}

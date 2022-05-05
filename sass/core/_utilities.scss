@@ -1,0 +1,25 @@
+.hidden {
+    display: none;
+}
+
+@media (max-width: 950px) {
+    .hidden-xs {
+        display: none;
+    }
+    .hide-space {
+        position: relative;
+    }
+}
+
+@media (min-width: 951px) {
+    .hidden-md {
+        display: none;
+    }
+    .hide-space {
+        position: absolute;
+    }
+}
+
+.active {
+    transform: translateX(0%);
+}

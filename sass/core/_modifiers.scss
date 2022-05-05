@@ -1,0 +1,36 @@
+@use './variables' as *;
+.menu-item_right {
+    margin-left: auto;
+}
+.menu__item_gray {
+    a {
+        color: $neutral-medium-gray;
+    }   
+}
+.menu__item__dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.menu__item_gray-outline-button {
+    border: 2px solid $neutral-medium-gray;
+    border-radius: 16px;
+}
+.menu__item-register-padding {
+    padding: 10px 20px;
+}
+.intro-content__learn-more-link {
+    border: 1px solid $neutral-black;
+    border-radius: 16px;
+    transition: color 300ms, background-color 300ms;
+    &:hover {
+        background-color: $neutral-white;
+        color: $neutral-black;
+    }
+}
+.intro-content__learn-more-link-button-padding {
+    padding: 20px 30px;
+}
+.position-relative {
+    position: relative;
+}
